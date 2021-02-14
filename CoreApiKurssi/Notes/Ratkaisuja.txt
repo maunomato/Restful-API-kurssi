@@ -1,0 +1,10 @@
+
+Scaffold-DbContext ei toimi 
+-------------------------------
+Lis‰‰ nugetit
+PM konsolissa 
+Install-Package <paketin nimi>
+- Microsoft.EntityFrameworkCore.SqlServer
+- Microsoft.EntityFrameworkCore.Tools
+sitten voit ajaa
+Scaffold-DbContext "Server=DESKTOP-HRPPOU8;Database=northwind;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
