@@ -24,7 +24,14 @@ namespace CoreApiKurssi.Controllers
             if (prod != null) return prod;
             return new { Error = "No record found" };
         }
-
+        [HttpGet]
+        [Route("Nimi/{str}")]
+        public IEnumerable<Object> GetProductsByNimi(string str)
+        {
+            var prod = nc.Products.Where(p => p.ProductName.Contains(str));
+            if (prod is null)  return new Object[] { new { Error = "Yhtään tuotetta ei löytynyt." } };
+            return prod.ToArray();
+        }
         [HttpPost]
         public Object PostTuote([FromBody] Product prodData)
         {
